@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    container_name: 03-exception-handler
+    hostname: 03-exception-handler
+    image: richard-3
+    restart: always
+    networks:
+      - db-postgres-network-2
+    ports:
+        - "9092:8080"
+    command: ["java", "-jar", "/app/application.jar"]
+    
+networks:
+  db-postgres-network-2:
+    external:
+        name: 02-spring-boot-postgresql-docker-compose_db-postgres-network
