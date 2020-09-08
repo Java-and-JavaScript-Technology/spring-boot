@@ -3,7 +3,7 @@ FROM maven:3-jdk-8
 COPY . /source
 WORKDIR /source
 RUN mkdir /app && \
-    mvn clean package && \
+    mvn clean -DskipTests=true package && \
     cp target/application.jar /app/application.jar
     
 EXPOSE 8080
