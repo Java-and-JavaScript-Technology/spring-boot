@@ -6,7 +6,7 @@ services:
     container_name: 01-spring-boot-docker-compose
     restart: always
     hostname: 01-spring-boot-docker-compose
-    image: richard
+    image: richard-1
     ports:
         - "9090:8080"
     command: ["java", "-jar", "/app/application.jar"]
