@@ -3,7 +3,9 @@ version: '3.7'
 services:
   api:
     build: .
-    container_name:
+    container_name: 01-spring-boot-docker-compose
+    restart: always
+    hostname: 01-spring-boot-docker-compose
     image: richard
     ports:
         - "9090:8080"
