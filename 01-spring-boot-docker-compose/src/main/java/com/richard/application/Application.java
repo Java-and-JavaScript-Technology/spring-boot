@@ -13,7 +13,7 @@ public class Application {
  @GetMapping(value = "/", produces = MediaType.TEXT_PLAIN_VALUE)
  public String home() {
 
-  return "home page";
+  return "Welcome to JJST! Demo project for Spring Boot and Docker Compose";
  }
 
  public static void main(String[] args) {
