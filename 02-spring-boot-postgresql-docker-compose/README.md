@@ -17,7 +17,7 @@ $ git clone https://github.com/Java-and-JavaScript-Technology/spring-boot.git
 $ cd 02-spring-boot-postgresql-docker-compose
 
 $ mkdir db_data
-$ chmod
+$ sudo chmod -R 777 db_data
 
 $ docker-compose up --build
 
