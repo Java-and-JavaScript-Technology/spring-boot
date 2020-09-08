@@ -109,3 +109,4 @@ nb-configuration.xml
 spring-framework/01-library-managerment-system/.attach_pid7611
 
 *.gz
+db_data
