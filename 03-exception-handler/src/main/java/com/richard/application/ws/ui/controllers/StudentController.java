@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.richard.application.exceptions.InvaliFielException;
-import com.richard.application.ws.ui.model.request.StudentRequest;
+import com.richard.application.ws.ui.model.requests.StudentRequest;
 
 /**
  * @author richard

@@ -7,7 +7,7 @@
  * Year: 2020
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER
  */
-package com.richard.application.ws.ui.model.request;
+package com.richard.application.ws.ui.model.requests;
 
 import java.io.Serializable;
 
