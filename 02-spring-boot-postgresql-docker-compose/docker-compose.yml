@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    container_name: 02-spring-boot-postgresql-docker-compose
+    hostname: 02-spring-boot-postgresql-docker-compose
+    image: richard-2
+    restart: always
+    networks:
+      - db-postgres-network
+    ports:
+        - "9091:8080"
+    command: ["java", "-jar", "/app/application.jar"]
+    
+  db:
+    image: postgres
+    container_name: postgresql
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - db-postgres-network
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgresdb
+
+networks:
+  db-postgres-network:
+    driver: bridge
+
+volumes:
+  db_data:
