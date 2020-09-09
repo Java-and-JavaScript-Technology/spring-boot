@@ -9,13 +9,12 @@
  */
 package com.richard.application.ws.ui.controllers;
 
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.richard.application.exceptions.InvaliFielException;
+import com.richard.application.exceptions.StudentException;
 import com.richard.application.ws.ui.model.requests.StudentRequest;
 
 /**
@@ -34,14 +33,10 @@ public class StudentController {
   String isNull = "";
 
   if (studentRequest.getFirstName().equals(isNull)) {
-   throw new InvaliFielException("Invali Fiel Exception!");
+   throw new StudentException("Invali Fiel Exception!");
   }
 
   return "Student Information was saved!";
  }
 
- @ExceptionHandler
- public String handleInvaliFielException(InvaliFielException e){
-  return e.getMessage();
- }
 }
