@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    container_name: 04-Interceptor
+    hostname: 04-Interceptor
+    image: richard-4
+    restart: always
+    networks:
+      - db-postgres-network-3
+    ports:
+        - "9093:8080"
+    command: ["java", "-jar", "/app/application.jar"]
+    
+networks:
+  db-postgres-network-3:
+    external:
+        name: 02-spring-boot-postgresql-docker-compose_db-postgres-network
