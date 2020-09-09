@@ -3,14 +3,14 @@ version: '3.7'
 services:
   api:
     build: .
-    container_name: 05-spring-security-example
-    hostname: 05-spring-security-example
+    container_name: 05-spring-security-basic
+    hostname: 05-spring-security-basic
     image: richard-5
     restart: always
     networks:
       - db-postgres-network-4
     ports:
-        - "9093:8080"
+        - "9094:8080"
     command: ["java", "-jar", "/app/application.jar"]
     
 networks:

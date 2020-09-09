@@ -24,24 +24,21 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+ @SuppressWarnings("deprecation")
  @Bean
  @Override
  public UserDetailsService userDetailsService() {
 
   InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-  manager.createUser(User.withUsername("richard").password("richard").roles("USER").build());
+  manager.createUser(User.withDefaultPasswordEncoder().username("richard").password("richard").roles("USER").build());
   return manager;
-  
+
  }
 
  @Override
  protected void configure(HttpSecurity http) throws Exception {
-  http.authorizeRequests().antMatchers("/", "/home").permitAll()
-    .anyRequest().authenticated()
-    .and().formLogin()
-    .defaultSuccessUrl("/hello").permitAll()
-    .and().logout()
-    .permitAll();
+  http.authorizeRequests().antMatchers("/", "/home").permitAll().anyRequest().authenticated().and().formLogin()
+    .defaultSuccessUrl("/hello").permitAll().and().logout().permitAll();
  }
 
 }
