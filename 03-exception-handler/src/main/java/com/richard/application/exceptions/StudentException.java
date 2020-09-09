@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class InvaliFielException extends RuntimeException{
+public class StudentException extends RuntimeException{
 
  private static final long serialVersionUID = 3693855756059158596L;
  
